@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Projeto em [Next.js](https://nextjs.org/) usando o comando padrao [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Teste Desenvolvimento Front-end
 
-First, run the development server:
+Utilize este comando para rodar o projeto:
 
 ```bash
-npm run dev
-# or
-yarn dev
+  yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Entre [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## O problema
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Obter os dados pela "api" disponibilizada, e realizar um tratamento de dados conforme as cores e tamanhos diponiveis de um produto (vestido)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Solucao
 
-## Learn More
+Inicialmente pensei alguns pontos.
 
-To learn more about Next.js, take a look at the following resources:
+  - Pegar os dados 
+  - Filtrar
+  - Controla-los
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  Inicialmente na requisicao recebo os dados com alguns valores duplicados ```` "optionsData"````, utilizando ````reduce```` faco a primeira modificao no objeto, baseado nas cores filtraria os tamanhos, sendo reduzido e modificado num objeto final, chave e valor com tamanho e um array de cores. Conventindo depois para controlar via inputs do tipo ``radio``.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  Finalizando com novas variaveis ja separadas ``colorList`` & ``sizeList``, para poder realizar o controle dos inputs e somente aparecer os tamanhos disponiveis baseado nas cores, gerando tambem os componentes apartir do map.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  ``handleSelectColor`` & ``handleSelectSize`` sao funcoes para o controle sobre os inputs e os estados que sao utilizados neles, tantos no iputs quanto nos label. Onde basicamente recebem o ``value`` do event modificado o estado ``size`` & ``color``, feitos para ajudar na confirmacao de checked.
