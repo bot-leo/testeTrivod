@@ -22,7 +22,7 @@ Inicialmente pensei alguns pontos.
   - Filtrar
   - Controla-los
 
-  Inicialmente na requisicao recebo os dados com alguns valores duplicados ```` "optionsData"````, utilizando ````reduce```` faco a primeira modificao no objeto, baseado nas cores filtraria os tamanhos, sendo reduzido e modificado num objeto final, chave e valor com tamanho e um array de cores. Conventindo depois para controlar via inputs do tipo ``radio``.
+  Inicialmente na requisicao recebo os dados com alguns valores duplicados ```` "optionsData"````, utilizando ````reduce```` faco a primeira modificao no objeto, baseado nas cores filtrando os tamanhos, sendo reduzido e num objeto final, chave e valor com tamanho e um array de cores. Conventindo depois para controlar via inputs do tipo ``radio``.
 
   Finalizando com novas variaveis ja separadas ``colorList`` & ``sizeList``, para poder realizar o controle dos inputs e somente aparecer os tamanhos disponiveis baseado nas cores, gerando tambem os componentes apartir do map.
 
